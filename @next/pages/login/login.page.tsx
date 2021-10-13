@@ -7,7 +7,7 @@ export const Login = (): JSX.Element => {
   return (
     <S.LoginContainer>
       <Surface spacing={4}>
-        <LoginForm onSubmit={(...args) => console.log(args)} />
+        <LoginForm />
       </Surface>
     </S.LoginContainer>
   );

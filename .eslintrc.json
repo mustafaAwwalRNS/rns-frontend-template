@@ -25,7 +25,7 @@
     "max-lines": ["error", 500],
     "filenames/match-regex": [
       "error",
-      "^([a-z\\-]*)(\\.(atom|queries|organism|test|types|behavior|utils|config|setup|d|molecule|template|page|hooks|context|styles|constants)){0,1}$",
+      "^([a-z\\-]*)(\\.(selectors|mock|slice|store|atom|lib|queries|organism|test|types|behavior|utils|config|setup|d|molecule|template|page|hooks|context|styles|constants|handlers)){0,1}$",
       true
     ]
   }

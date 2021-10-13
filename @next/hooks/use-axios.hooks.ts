@@ -74,7 +74,7 @@ const reducer =
     }
   };
 
-type UseAxiosReturnType<T, J extends Array<unknown>> = [
+export type UseAxiosReturnType<T, J extends Array<unknown>> = [
   appFetch: (...params: J) => void,
   result: {
     data?: T;

@@ -1,11 +1,12 @@
 import React from "react";
-import { LoginCredentials, LoginFormProps } from "./login-form.types";
 import { useForm, Controller } from "react-hook-form";
 import { LabelledTextField } from "@components/molecules";
 import { Grid, GridItem, Divider, Button, Typography } from "@components/atoms";
 import * as constants from "./login-form.constants";
 import { yupResolver } from "@hookform/resolvers/yup";
-export const LoginForm = ({ onSubmit }: LoginFormProps): JSX.Element => {
+import { useLogin, LoginCredentials } from "@queries";
+export const LoginForm = (): JSX.Element => {
+  const [login, { loading, status }] = useLogin();
   const {
     control,
     handleSubmit,
@@ -15,7 +16,7 @@ export const LoginForm = ({ onSubmit }: LoginFormProps): JSX.Element => {
     resolver: yupResolver(constants.loginCredentialValidationSchema),
   });
   return (
-    <form onSubmit={handleSubmit(onSubmit)} aria-label="Login Form">
+    <form onSubmit={handleSubmit(login)} aria-label="Login Form">
       <Grid flexDirection="column" alignItems="stretch" spacing={1}>
         <GridItem>
           <Typography variant="h1">Login</Typography>
@@ -63,11 +64,13 @@ export const LoginForm = ({ onSubmit }: LoginFormProps): JSX.Element => {
           />
         </GridItem>
         {errors.password && <GridItem>{errors.password.message}</GridItem>}
+        {status === "success" && <GridItem>success</GridItem>}
         <GridItem>
           <Divider noSpacing />
         </GridItem>
+        {loading && <GridItem>Loading...</GridItem>}
         <GridItem>
-          <Button type="submit" fullWidth>
+          <Button type="submit" fullWidth disabled={loading}>
             Login
           </Button>
         </GridItem>

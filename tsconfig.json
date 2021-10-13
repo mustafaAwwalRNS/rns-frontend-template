@@ -27,7 +27,11 @@
       "@contexts": ["./@next/contexts"],
       "@styles": ["./styles"],
       "@pages": ["./@next/pages"],
-      "@hooks": ["./@next/hooks"]
+      "@hooks": ["./@next/hooks"],
+      "@lib": ["./@next/lib"],
+      "@queries": ["./@next/queries"],
+      "@mocks": ["./mocks"],
+      "@store": ["./store"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
