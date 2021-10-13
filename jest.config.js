@@ -1,11 +1,18 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { pathsToModuleNameMapper } = require("ts-jest/utils");
+const { compilerOptions } = require("./tsconfig.json");
 module.exports = {
   collectCoverageFrom: [
     "**/*.{js,jsx,ts,tsx}",
     "!**/*.d.ts",
     "!**/node_modules/**",
+    "!**/.next/**",
+    "!**/coverage/**",
+    "!*.config.js",
   ],
-
+  moduleDirectories: ["node_modules", "<rootDir>/node_modules", "."],
   moduleNameMapper: {
+    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: "<rootDir>/" }),
     /* Handle CSS imports (with CSS modules)
         https://jestjs.io/docs/webpack#mocking-css-modules */
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
