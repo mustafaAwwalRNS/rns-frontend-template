@@ -1,3 +1,3 @@
 import axios from "axios";
-
-export const backendAxios = axios.create({ baseURL: "http://mockapi.com" });
+import { environment } from "@config";
+export const backendAxios = axios.create({ baseURL: environment.apiKey });

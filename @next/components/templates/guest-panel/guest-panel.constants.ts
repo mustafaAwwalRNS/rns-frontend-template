@@ -10,9 +10,5 @@ export const GuestPanelHeaderProps: GuestHeaderProps = {
       href: "/login",
       routeName: "Login",
     },
-    {
-      href: "/sign-up",
-      routeName: "sign-up",
-    },
   ],
 };

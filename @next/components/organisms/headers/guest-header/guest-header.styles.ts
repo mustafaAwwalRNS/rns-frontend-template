@@ -10,7 +10,6 @@ export const GuestHeader = styled.header`
   ${({
     theme: {
       header: { height, zIndex },
-      spacing,
       colors: { surface },
       shadow,
     },
@@ -19,8 +18,6 @@ export const GuestHeader = styled.header`
     zIndex,
     backgroundColor: surface,
     boxShadow: shadow(2),
-    paddingLeft: spacing(2),
-    paddingRight: spacing(2),
   })}
 `;
 
@@ -29,9 +26,11 @@ export const GuestHeaderNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  ${({ theme: { containerWidth } }) => ({
+  ${({ theme: { containerWidth, spacing } }) => ({
     maxWidth: containerWidth,
     width: containerWidth,
+    paddingLeft: spacing(2),
+    paddingRight: spacing(2),
   })};
 `;
 

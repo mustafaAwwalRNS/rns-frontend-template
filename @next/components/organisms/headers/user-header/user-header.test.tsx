@@ -2,9 +2,8 @@ import React from "react";
 import { render, screen } from "test-utils";
 
 import { UserHeader } from "./user-header.organism";
-
 const setup = () => {
-  const utils = render(<UserHeader />);
+  const utils = render(<UserHeader />, { withUser: true });
   const header = screen.getByRole("banner");
   return { header, ...utils };
 };
@@ -12,6 +11,6 @@ const setup = () => {
 describe("<UserHeader />", () => {
   it("should render", () => {
     const { header } = setup();
-    expect(header).toBeInTheDocument();
+    expect(header).toMatchSnapshot();
   });
 });

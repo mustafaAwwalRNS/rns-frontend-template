@@ -1,5 +1,5 @@
-import { SideBarLinkProps } from "@components/atoms";
+import { BoxedLinkProps } from "@components/atoms";
 
 export interface SidebarProps {
-  links: SideBarLinkProps[];
+  links: BoxedLinkProps[];
 }

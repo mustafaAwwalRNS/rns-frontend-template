@@ -4,6 +4,8 @@ import { defaultTheme } from "@styles";
 import type { AppPropsWithLayout } from "@types";
 import { createStore } from "@store";
 import { Provider } from "react-redux";
+import { nextMock } from "@mocks";
+nextMock();
 const store = createStore();
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout): JSX.Element => {
   const getLayout = Component.getLayout ?? ((page) => page);

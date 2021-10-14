@@ -1,7 +1,7 @@
 import React from "react";
 import * as S from "./sidebar.styles";
 import { SidebarProps } from "./sidebar.types";
-import { SidebarLink } from "@components/atoms";
+import { BoxedLink } from "@components/atoms";
 
 export const Sidebar = ({ links }: SidebarProps): JSX.Element => {
   return (
@@ -10,7 +10,7 @@ export const Sidebar = ({ links }: SidebarProps): JSX.Element => {
         <S.SideBarLinkList>
           {links.map((props, index) => (
             <S.SideBarLinkListItem key={index}>
-              <SidebarLink {...props} />
+              <BoxedLink {...props} />
             </S.SideBarLinkListItem>
           ))}
         </S.SideBarLinkList>

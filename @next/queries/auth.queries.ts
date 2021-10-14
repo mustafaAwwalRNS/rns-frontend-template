@@ -9,7 +9,10 @@ export interface LoginCredentials {
 }
 export interface LoginResponse {
   token: string;
-  username: string;
+  user: {
+    username: string;
+    profileImage: string;
+  };
 }
 
 export class AuthQueries {

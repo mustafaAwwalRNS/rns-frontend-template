@@ -1,14 +1,14 @@
 import React from "react";
 import { render, screen } from "test-utils";
 import { shouldBehaveLikeLink } from "@tests/behaviors";
-import { SidebarLink } from "./sidebar-link.atom";
+import { BoxedLink } from "./boxed-link";
 const setup = () => {
   const linkRoute = "/";
-  const utils = render(<SidebarLink href={linkRoute}>Home</SidebarLink>);
+  const utils = render(<BoxedLink href={linkRoute}>Home</BoxedLink>);
   const link = screen.getByRole("link", { name: /Home/i });
   return { link, linkRoute, ...utils };
 };
 
-describe("<SidebarLink />", () => {
+describe("<BoxedLink />", () => {
   shouldBehaveLikeLink(setup);
 });

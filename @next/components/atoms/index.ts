@@ -8,3 +8,4 @@ export * from "./container";
 export * from "./grid-item";
 export * from "./surface";
 export * from "./button";
+export * from "./circle-image";

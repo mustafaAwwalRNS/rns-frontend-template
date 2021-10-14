@@ -32,7 +32,10 @@ describe("<LoginForm />", () => {
     const loading = await screen.findByText(/loading/i);
     await waitForElementToBeRemoved(loading);
     expect(await screen.findByText(/success/i)).toBeInTheDocument();
-    expect(store.getState().auth).toMatchObject({ username: "developer" });
+    expect(store.getState().auth).toMatchObject({
+      loggedIn: true,
+      user: { username: "developer", profileImage: "http://test-something" },
+    });
   });
   it("should show wrong email pattern error message", async () => {
     const { emailField, submitButton } = setup();

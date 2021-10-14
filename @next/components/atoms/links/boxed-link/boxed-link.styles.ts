@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const SideBarLink = styled.a`
+export const BoxedLink = styled.a`
   width: 100%;
   display: block;
   text-decoration: none;

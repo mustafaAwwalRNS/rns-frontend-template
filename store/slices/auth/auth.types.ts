@@ -1,3 +1,7 @@
 export interface AuthSliceState {
-  username: string;
+  loggedIn: boolean;
+  user: {
+    username: string;
+    profileImage: string;
+  };
 }

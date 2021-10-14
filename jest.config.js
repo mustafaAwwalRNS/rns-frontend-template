@@ -9,6 +9,8 @@ module.exports = {
     "!**/.next/**",
     "!**/coverage/**",
     "!*.config.js",
+    "!**/public/**",
+    "!**/mocks/**",
   ],
   moduleDirectories: ["node_modules", "<rootDir>/node_modules", "."],
   moduleNameMapper: {
@@ -24,11 +26,7 @@ module.exports = {
         https://jestjs.io/docs/webpack#handling-static-assets */
     "^.+\\.(jpg|jpeg|png|gif|webp|svg)$": "<rootDir>/__mocks__/fileMock.js",
   },
-  testPathIgnorePatterns: [
-    "<rootDir>/node_modules/",
-    "<rootDir>/\\.next/",
-    "<rootDir>/mocks",
-  ],
+  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/\\.next/"],
   testEnvironment: "jest-environment-jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   transform: {

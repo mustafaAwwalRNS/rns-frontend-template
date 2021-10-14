@@ -31,7 +31,8 @@
       "@lib": ["./@next/lib"],
       "@queries": ["./@next/queries"],
       "@mocks": ["./mocks"],
-      "@store": ["./store"]
+      "@store": ["./store"],
+      "@config": ["./config"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

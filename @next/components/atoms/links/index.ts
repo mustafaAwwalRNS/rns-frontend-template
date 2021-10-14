@@ -1,2 +1,2 @@
-export * from "./sidebar-link";
+export * from "./boxed-link";
 export * from "./link";
