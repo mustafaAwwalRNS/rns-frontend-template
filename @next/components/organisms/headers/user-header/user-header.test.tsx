@@ -9,7 +9,11 @@ const setup = () => {
 };
 
 describe("<UserHeader />", () => {
-  it("should render", () => {
+  it("should have accessible role", () => {
+    const { header } = setup();
+    expect(header).toBeInTheDocument();
+  });
+  it("should match snapshot", () => {
     const { header } = setup();
     expect(header).toMatchSnapshot();
   });

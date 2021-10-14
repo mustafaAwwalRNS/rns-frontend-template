@@ -1,6 +1,12 @@
 import { render } from "test-utils";
 import userEvent from "@testing-library/user-event";
 
+/**
+ * shouldBehaveLikeTextInput
+ *
+ * Features:
+ * - Tests common textInput behaviors.
+ */
 export const shouldBehaveLikeTextInput = (
   setup: () => ReturnType<typeof render> & { textInput: HTMLInputElement }
 ): void =>

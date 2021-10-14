@@ -3,6 +3,13 @@ import { BreadCrumbsProps } from "./breadcrumbs.types";
 import { Link } from "@components/atoms";
 import * as S from "./breadcrumbs.styles";
 
+/**
+ * BreadCrumbs
+ *
+ * Features:
+ * - Renders links as bread crumbs.
+ * - Routes to the link of the specific crumb when the link is clicked.
+ */
 export const BreadCrumbs = ({ links }: BreadCrumbsProps): JSX.Element => {
   return (
     <S.BreadCrumbs>

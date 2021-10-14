@@ -18,12 +18,18 @@ describe("<BreadCrumbs />", () => {
     const { breadCrumbs } = setup();
     expect(breadCrumbs).toBeInTheDocument();
   });
+  /**
+   * Check that all links are rendered with proper text
+   */
   links.forEach(({ text }) => {
     it(`should render ${text} link`, () => {
       setup();
       expect(screen.getByRole("link", { name: text })).toBeInTheDocument();
     });
   });
+  /**
+   * Don't add ">" icon when there is a single link
+   */
   it("should not render > sign on single link", () => {
     setup([{ href: "/", text: "dashboard" }]);
     expect(screen.queryByText(">")).toBeNull();

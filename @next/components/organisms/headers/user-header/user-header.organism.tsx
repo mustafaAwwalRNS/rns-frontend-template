@@ -18,11 +18,7 @@ export const UserHeader = (): JSX.Element => {
           <Button onClick={() => dispatch(authActions.logout())}>Logout</Button>
         </GridItem>
         <GridItem>
-          <UserAvatar
-            username={username}
-            imageSrc={profileImage}
-            imageAlt="profile image"
-          />
+          <UserAvatar username={username} imageSrc={profileImage} />
         </GridItem>
       </Grid>
     </S.Header>

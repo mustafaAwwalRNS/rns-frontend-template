@@ -3,6 +3,13 @@ import singletonRouter from "next/router";
 import mockRouter from "next-router-mock";
 import userEvent from "@testing-library/user-event";
 jest.mock("next/dist/client/router", () => require("next-router-mock"));
+
+/**
+ * shouldBehaveLikeLink
+ *
+ * Features:
+ * - Tests common link behaviors.
+ */
 export const shouldBehaveLikeLink = (
   setup: () => ReturnType<typeof render> & {
     link: HTMLElement;

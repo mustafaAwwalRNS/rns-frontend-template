@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "test-utils";
 import { Sidebar } from "./sidebar.organism";
-import { SideBarLinkProps } from "@components/atoms";
-const links: SideBarLinkProps[] = [
+import { BoxedLinkProps } from "@components/atoms";
+const links: BoxedLinkProps[] = [
   { href: "/", children: "home" },
   { href: "/", children: "home" },
 ];

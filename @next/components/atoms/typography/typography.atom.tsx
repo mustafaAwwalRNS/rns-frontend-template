@@ -1,11 +1,18 @@
 import React from "react";
 import { TypographyProps } from "./typography.types";
 import * as S from "./typography.styles";
+
+/**
+ * Typography component. Uses colors from theme.
+ */
 export const Typography = ({
   variant,
   children,
   ...rest
 }: TypographyProps): JSX.Element => {
+  /**
+   * Returning on the basis of the variant.
+   */
   switch (variant) {
     case "h1":
       return <S.H1 {...rest}>{children}</S.H1>;

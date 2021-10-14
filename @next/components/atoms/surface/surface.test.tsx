@@ -1,14 +1,14 @@
 import React from "react";
-import { render, screen } from "test-utils";
+import { render } from "test-utils";
 import { Surface } from "./surface.template";
-const text = "surface";
 const setup = () => {
-  render(<Surface>{text}</Surface>);
+  const { container: surface } = render(<Surface>Surface content</Surface>);
+  return { surface };
 };
 
 describe("<Surface />", () => {
   it("should render", () => {
-    setup();
-    expect(screen.getByText(text)).toBeInTheDocument();
+    const { surface } = setup();
+    expect(surface).toMatchSnapshot();
   });
 });

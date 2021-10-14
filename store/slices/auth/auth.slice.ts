@@ -1,6 +1,12 @@
+/**
+ * @file Contains the auth slice of the app store state.
+ * Here the slice is initialized.
+ */
+
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AuthSliceState } from "./auth.types";
 import { LoginResponse } from "@queries";
+
 export const authInitialState: AuthSliceState = {
   loggedIn: false,
   user: { username: "", profileImage: "" },

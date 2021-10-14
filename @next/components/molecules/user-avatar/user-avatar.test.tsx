@@ -6,7 +6,6 @@ import { UserAvatar } from "./user-avatar.molecule";
 const props: UserAvatarProps = {
   username: "tester",
   imageSrc: "http://test-image",
-  imageAlt: "test",
 };
 const setup = () => {
   render(<UserAvatar {...props} />);

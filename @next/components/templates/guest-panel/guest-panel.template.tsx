@@ -5,6 +5,15 @@ import * as constants from "./guest-panel.constants";
 import { useSelectAuth } from "@store";
 import { useRouter } from "next/router";
 import * as S from "./guest-panel.styles";
+
+/**
+ * Guest Panel
+ *
+ *
+ * Features:
+ * - Renders components which are common between all guest pages.
+ *
+ */
 export const GuestPanel = ({ children }: GuestPanelProps): JSX.Element => {
   const { loggedIn } = useSelectAuth();
   const router = useRouter();

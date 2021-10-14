@@ -3,10 +3,18 @@ import { backendAxios } from "@lib";
 import { AxiosResponse } from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "@store";
+
+/**
+ * Props required to login.
+ */
 export interface LoginCredentials {
   email: string;
   password: string;
 }
+
+/**
+ * Properties in login response
+ */
 export interface LoginResponse {
   token: string;
   user: {
@@ -15,6 +23,9 @@ export interface LoginResponse {
   };
 }
 
+/**
+ * @class Has all the auth queries
+ */
 export class AuthQueries {
   static login = (
     credentials: LoginCredentials
@@ -22,6 +33,13 @@ export class AuthQueries {
     backendAxios.post("/login", credentials);
 }
 
+/**
+ * useLogin hook
+ *
+ * Feature:
+ * - It fetches the login query.
+ * - On Success updates the store.
+ */
 export const useLogin = (): UseAxiosReturnType<
   LoginResponse,
   [credentials: LoginCredentials]

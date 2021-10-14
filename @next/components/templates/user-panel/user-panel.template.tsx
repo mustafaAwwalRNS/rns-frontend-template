@@ -5,6 +5,13 @@ import * as S from "./user-panel.styles";
 import * as constants from "./user.constants";
 import { useSelectAuth } from "@store";
 import { useRouter } from "next/router";
+
+/**
+ * UserPanel
+ *
+ * Features:
+ * - Renders common component between all user pages.
+ */
 export const UserPanel = ({ children }: BaseTemplateTypes): JSX.Element => {
   const { loggedIn } = useSelectAuth();
   const router = useRouter();

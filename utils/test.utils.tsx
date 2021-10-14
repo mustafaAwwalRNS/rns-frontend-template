@@ -10,8 +10,16 @@ import { defaultTheme } from "@styles";
 import { ReactElement } from "react";
 import { Provider } from "react-redux";
 import { createStore, authActions } from "@store";
+
+/**
+ * customRender
+ *
+ * Features:
+ * - extends the render function to add common providers.
+ *
+ */
 const customRender = (
-  ui: ReactElement & { getLayout: (page: JSX.Element) => JSX.Element },
+  ui: ReactElement & { getLayout?: (page: JSX.Element) => JSX.Element },
   options?: Omit<RenderOptions, "queries"> & {
     /**
      * Adds the user to the store before rendering the component

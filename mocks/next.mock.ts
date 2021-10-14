@@ -5,7 +5,7 @@ import { authHandlers } from "./handlers";
 
 /**
  * @file This file contains the implementation of mock api for next development
- * server. Set the NEXT_PUBLIC_ALLOW_API_MOCKING to false if you don't want mocking
+ * server. Set the NEXT_PUBLIC_ALLOW_API_MOCKING to false if you don't want mocking or remove it.
  */
 
 export const nextMock = (): void => {

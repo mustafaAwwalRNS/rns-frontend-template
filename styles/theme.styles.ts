@@ -1,5 +1,9 @@
 import { DefaultTheme as DefaultThemInterface } from "styled-components";
 
+/**
+ * See explanation for theming in styled-components.d.ts
+ */
+
 export const defaultTheme: DefaultThemInterface = {
   name: "default",
   colors: {

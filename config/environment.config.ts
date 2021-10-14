@@ -1,5 +1,8 @@
 import { string, object } from "yup";
 
+/**
+ * Validates that the application has not started without environment variables.
+ */
 export const environment = object()
   .shape({
     apiKey: string().required(),

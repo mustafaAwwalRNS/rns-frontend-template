@@ -5,6 +5,17 @@ import { Grid, GridItem, Divider, Button, Typography } from "@components/atoms";
 import * as constants from "./login-form.constants";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useLogin, LoginCredentials } from "@queries";
+
+/**
+ * LoginForm
+ *
+ * Features
+ * - Renders a form with required fields for login.
+ * - Validates all the fields.
+ * - On correct submission calls the login api and updates the store on
+ * successful response.
+ *
+ */
 export const LoginForm = (): JSX.Element => {
   const [login, { loading, status }] = useLogin();
   const {

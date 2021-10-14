@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UserHeader /> should render 1`] = `
+exports[`<UserHeader /> should match snapshot 1`] = `
 .c6 {
   margin: 0;
   padding: 0;
@@ -152,7 +152,7 @@ exports[`<UserHeader /> should render 1`] = `
           tester
         </span>
         <img
-          alt="profile image"
+          alt="user profile"
           class="c8"
           src="http://test-image"
         />
