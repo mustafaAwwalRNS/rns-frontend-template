@@ -11,7 +11,7 @@ import { ReactElement } from "react";
 import { Provider } from "react-redux";
 import { createStore, authActions } from "@store";
 const customRender = (
-  ui: ReactElement,
+  ui: ReactElement & { getLayout: (page: JSX.Element) => JSX.Element },
   options?: Omit<RenderOptions, "queries"> & {
     /**
      * Adds the user to the store before rendering the component
@@ -30,9 +30,10 @@ const customRender = (
         user: { username: "tester", profileImage: "http://test-image" },
       })
     );
+  const getLayout = ui.getLayout || ((page) => page);
   const renderResult = render(
     <Provider {...{ store }}>
-      <ThemeProvider theme={defaultTheme}>{ui}</ThemeProvider>
+      <ThemeProvider theme={defaultTheme}>{getLayout(ui)}</ThemeProvider>
     </Provider>,
     {
       queries: { ...queries },
