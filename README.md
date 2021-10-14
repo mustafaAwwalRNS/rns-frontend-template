@@ -50,5 +50,6 @@ These are some articles which really helped me to design to this template. It wi
 - [Why not to test implementation details](https://kentcdodds.com/blog/testing-implementation-details)
 - [Common mistakes with react testing library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 - [Basic intro of react testing library](https://www.robinwieruch.de/react-testing-library)
+- [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/)
 
 You can navigate to different folders each have its own readme file to help you guide through the design methodology.
