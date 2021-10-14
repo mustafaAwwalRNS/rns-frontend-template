@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcone to RNS Front-End template
+This template is made using NextJS.
 
 ## Getting Started
-
-First, run the development server:
+Intall the dependencies:
+```
+npm install
+```
+Now you can run the development server using:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Features of this template
+- Highly scalable follwoing the atomic design pattern.
+- Better for SEO and performance as compared to react.
+- Use of react functional components.
+- Separation of concerns between the view and the logic.
+- Tested mostly by user perspective.
+- Mock servers for testing and development.
+- Theming and styling using styled-components. A css-in-js solution.
+- High code reusibility.
+- Best practices.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Technologies used
+- [NextJS as front end framework](https://nextjs.org/)
+- [Jest as testing suite](https://jestjs.io/)
+- [React Testing library for testing UI components](https://testing-library.com/docs/react-testing-library/intro/)
+- [React hook testing library for testing react hooks](https://github.com/testing-library/react-hooks-testing-library)
+- [Redux toolkit for store solution](https://redux-toolkit.js.org/)
+- [React Redux for hooks implementation of the store](https://react-redux.js.org/)
+- [Axios for requests](https://github.com/axios/axios)
+- [Styled components for styling](https://styled-components.com/)
+- [React Hook Form for optimized forms](https://react-hook-form.com/)
+- [Yup for validations](https://www.npmjs.com/package/yup)
+- [Eslint for linting](https://eslint.org/)
+- [MSW for mock servers during testing and development](https://mswjs.io/)
 
-## Learn More
+I would recommend before starting you must have basic knowledge of all the above mentioned technologies.
 
-To learn more about Next.js, take a look at the following resources:
+## Resources
+These are some articles which really helped me to design to this template. It will give you a head start if you first read these before you start working on this project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Importance of testing](https://testingjavascript.com/)
+- [Why not to test implementation details](https://kentcdodds.com/blog/testing-implementation-details)
+- [Common mistakes with react testing library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+- [Basic intro of react testing library](https://www.robinwieruch.de/react-testing-library)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can navigate to different folders each have its own readme file to help you guide through the design methodology.
