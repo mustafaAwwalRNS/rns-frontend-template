@@ -32,6 +32,7 @@ Testing is one of the major parts of software development. [See this for knowing
   test("the email field should accept input", () => {
     // Also notice the benefit of the setup function we created before.
     const { emailField } = setup();
+    // See how the userEvent library is mocking the user typing in the field
     userEvent.type(emailField, "testing");
     expect(emailField).toHaveValue("testing");
   });
@@ -56,10 +57,12 @@ Testing is one of the major parts of software development. [See this for knowing
 
   ```javascript
   test("a button should render", () => {
-    const { container } = render(<button>button</button>);
+    const { container } = render(<CustomButton>button</CustomButton>);
     /**
      * Bad approach
-     * expect(container.firstChild).not.toBeNull();
+     * const button = container.firstChild();
+     * There is another problem with this code. Even if render function does not render a
+     * actual button the container.firstChild() will not throw an error.
      * */
     // Recommended
     screen.getByRole("button", { name: /button/i });
@@ -70,9 +73,9 @@ Testing is one of the major parts of software development. [See this for knowing
 
   HINT: always use regex while querying text to prevent case sensitivity.
 
-- This [test-utils file](./@next/utils/test.utils.tsx) contains our custom render function. We use this so that we don't have to call the providers again and again for each test. Basically all the providers rest here.
+- This [test-utils file](../@next/utils/test.utils.tsx) contains our custom render function. We use this so that we don't have to call the providers again and again for each test. Basically all the providers rest here.
 
-- In this project we mock apis using [msw](https://mswjs.io/). The server is already setup see [this]('../mocks/server.mock.ts'). All the mock handlers are stored in @next/mock/handlers folder. Benefits:
+- In this project we mock apis using [msw](https://mswjs.io/). The server is already setup see [this]('../@next/mocks/server.mock.ts'). All the mock handlers are stored in @next/mock/handlers folder. Benefits:
 
   - Cleaner tests no need to mock modules.
   - This approach is nearest to the actual api.
