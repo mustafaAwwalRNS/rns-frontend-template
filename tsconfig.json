@@ -16,8 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@tests/*": ["./tests"],
-      "@types": ["./types"],
-      "test-utils": ["./utils/test.utils.tsx"],
+      "@types": ["./@next/types"],
+      "test-utils": ["./@next/utils/test.utils.tsx"],
       "@tests/behaviors": ["./tests/behaviors"],
       "@components/*": ["./@next/components"],
       "@components/templates": ["./@next/components/templates"],
@@ -25,14 +25,14 @@
       "@components/molecules": ["@next/components/molecules"],
       "@components/atoms": ["./@next/components/atoms"],
       "@contexts": ["./@next/contexts"],
-      "@styles": ["./styles"],
+      "@styles": ["./@next/styles"],
       "@pages": ["./@next/pages"],
       "@hooks": ["./@next/hooks"],
       "@lib": ["./@next/lib"],
       "@queries": ["./@next/queries"],
       "@mocks": ["./mocks"],
-      "@store": ["./store"],
-      "@config": ["./config"]
+      "@store": ["./@next/store"],
+      "@config": ["./@next/config"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
