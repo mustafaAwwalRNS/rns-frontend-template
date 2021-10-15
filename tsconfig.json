@@ -15,7 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@tests/*": ["./tests"],
+      "@tests/*": ["./@next/tests"],
       "@types": ["./@next/types"],
       "test-utils": ["./@next/utils/test.utils.tsx"],
       "@tests/behaviors": ["./tests/behaviors"],
@@ -30,7 +30,7 @@
       "@hooks": ["./@next/hooks"],
       "@lib": ["./@next/lib"],
       "@queries": ["./@next/queries"],
-      "@mocks": ["./mocks"],
+      "@mocks": ["./@next/mocks"],
       "@store": ["./@next/store"],
       "@config": ["./@next/config"]
     }

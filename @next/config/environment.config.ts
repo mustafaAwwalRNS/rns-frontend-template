@@ -1,7 +1,11 @@
 import { string, object } from "yup";
 
 /**
- * Validates that the application has not started without environment variables.
+ * contains all the validated environment variables.
+ *
+ * Reason:
+ * This help prevents the application to start without environment variables. If not used you may still find the
+ * error but a bit late.
  */
 export const environment = object()
   .shape({

@@ -1,11 +1,15 @@
-# Welcone to RNS Front-End template
+# Welcome to RNS Front-End template
+
 This template is made using NextJS.
 
 ## Getting Started
-Intall the dependencies:
+
+Install the dependencies:
+
 ```
 npm install
 ```
+
 Now you can run the development server using:
 
 ```bash
@@ -17,17 +21,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
 ## Features of this template
-- Highly scalable follwoing the atomic design pattern.
+
+- Highly scalable following the atomic design pattern.
 - Better for SEO and performance as compared to react.
 - Use of react functional components.
 - Separation of concerns between the view and the logic.
 - Tested mostly by user perspective.
 - Mock servers for testing and development.
 - Theming and styling using styled-components. A css-in-js solution.
-- High code reusibility.
+- High code reusability.
 - Best practices.
 
 ## Technologies used
+
 - [NextJS as front end framework](https://nextjs.org/)
 - [Jest as testing suite](https://jestjs.io/)
 - [React Testing library for testing UI components](https://testing-library.com/docs/react-testing-library/intro/)
@@ -44,6 +50,7 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 I would recommend before starting you must have basic knowledge of all the above mentioned technologies.
 
 ## Resources
+
 These are some articles which really helped me to design to this template. It will give you a head start if you first read these before you start working on this project:
 
 - [Importance of testing](https://testingjavascript.com/)
