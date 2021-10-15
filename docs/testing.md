@@ -75,7 +75,7 @@ Testing is one of the major parts of software development. [See this for knowing
 
 - This [test-utils file](../@next/utils/test.utils.tsx) contains our custom render function. We use this so that we don't have to call the providers again and again for each test. Basically all the providers rest here.
 
-- In this project we mock apis using [msw](https://mswjs.io/). The server is already setup see [this]('../@next/mocks/server.mock.ts'). All the mock handlers are stored in @next/mock/handlers folder. Benefits:
+- In this project we mock apis using [msw](https://mswjs.io/). The server is already setup see [this](../@next/mocks/server.mock.ts). All the mock handlers are stored in @next/mock/handlers folder. Benefits:
 
   - Cleaner tests no need to mock modules.
   - This approach is nearest to the actual api.
