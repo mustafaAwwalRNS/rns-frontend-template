@@ -9,7 +9,14 @@ export const SocketProvider = ({
   connect,
   children,
 }: SocketProviderProps): JSX.Element => {
+  /**
+   * Starting the socket and memoizing it so it doesn't recreates the connection on every
+   * render.
+   */
   const connection = useMemo(() => {
+    /**
+     * If the parent provides true then connect otherwise don't connect
+     */
     if (connect) return io(connectionString);
   }, [connectionString, connect]);
   useEffect(() => {
@@ -18,8 +25,14 @@ export const SocketProvider = ({
         console.log("connected");
       });
     return () => {
+      /**
+       * Disconnect on unmount to prevent memory leaks
+       */
       connection && connection.disconnect();
     };
   }, [connect, connection]);
+  /**
+   * Wrap children with socket logic
+   */
   return <Provider value={connection}>{children}</Provider>;
 };
