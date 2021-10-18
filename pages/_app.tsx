@@ -5,6 +5,7 @@ import type { AppPropsWithLayout } from "@types";
 import { createStore } from "@store";
 import { Provider } from "react-redux";
 import { nextMock } from "@mocks";
+import { SocketProvider } from "@sockets";
 nextMock();
 const store = createStore();
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout): JSX.Element => {
@@ -13,8 +14,13 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout): JSX.Element => {
     <>
       <Provider {...{ store }}>
         <ThemeProvider theme={defaultTheme}>
-          <GlobalStyles />
-          {getLayout(<Component {...pageProps} />)}
+          <SocketProvider
+            connect={false}
+            connectionString="http://localhost:4000"
+          >
+            <GlobalStyles />
+            {getLayout(<Component {...pageProps} />)}
+          </SocketProvider>
         </ThemeProvider>
       </Provider>
     </>

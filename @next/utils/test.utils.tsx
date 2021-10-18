@@ -10,6 +10,7 @@ import { defaultTheme } from "@styles";
 import { ReactElement } from "react";
 import { Provider } from "react-redux";
 import { createStore, authActions } from "@store";
+import { SocketProvider } from "@sockets";
 
 /**
  * customRender
@@ -24,7 +25,11 @@ const customRender = (
     /**
      * Adds the user to the store before rendering the component
      */
-    withUser: boolean;
+    withUser?: boolean;
+    /**
+     * whether to connect with the socket or not.
+     */
+    connectWithSocket?: boolean;
   }
 ): RenderResult & { store: ReturnType<typeof createStore> } => {
   const store = createStore();
@@ -41,7 +46,12 @@ const customRender = (
   const getLayout = ui.getLayout || ((page) => page);
   const renderResult = render(
     <Provider {...{ store }}>
-      <ThemeProvider theme={defaultTheme}>{getLayout(ui)}</ThemeProvider>
+      <SocketProvider
+        connectionString="http://localhost:4000"
+        connect={options?.connectWithSocket || false}
+      >
+        <ThemeProvider theme={defaultTheme}>{getLayout(ui)}</ThemeProvider>
+      </SocketProvider>
     </Provider>,
     {
       queries: { ...queries },

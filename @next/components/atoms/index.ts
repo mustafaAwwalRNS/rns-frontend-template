@@ -9,3 +9,4 @@ export * from "./grid-item";
 export * from "./surface";
 export * from "./button";
 export * from "./circle-image";
+export * from "./notification";
