@@ -1,3 +1,32 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "plugins": ["jest", "jest-dom", "testing-library", "filenames"],
+  "overrides": [
+    {
+      // 3) Now we enable eslint-plugin-testing-library rules or preset only for matching files!
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
+  "rules": {
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debug": "warn",
+    "testing-library/no-dom-import": "off",
+    "camelcase": "error",
+    "max-lines": ["error", 500],
+    "filenames/match-regex": [
+      "error",
+      "^([a-z\\-]*)(\\.(selectors|provider|mock|slice|store|atom|lib|queries|organism|test|types|behavior|utils|config|setup|d|molecule|template|page|hooks|context|styles|constants|handlers)){0,1}$",
+      true
+    ]
+  }
 }

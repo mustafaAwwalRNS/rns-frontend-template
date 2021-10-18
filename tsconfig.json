@@ -12,7 +12,29 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@tests/*": ["./@next/tests"],
+      "@types": ["./@next/types"],
+      "test-utils": ["./@next/utils/test.utils.tsx"],
+      "@tests/behaviors": ["./tests/behaviors"],
+      "@components/*": ["./@next/components"],
+      "@components/templates": ["./@next/components/templates"],
+      "@components/organisms": ["./@next/components/organisms"],
+      "@components/molecules": ["@next/components/molecules"],
+      "@components/atoms": ["./@next/components/atoms"],
+      "@contexts": ["./@next/contexts"],
+      "@styles": ["./@next/styles"],
+      "@pages": ["./@next/pages"],
+      "@hooks": ["./@next/hooks"],
+      "@lib": ["./@next/lib"],
+      "@queries": ["./@next/queries"],
+      "@mocks": ["./@next/mocks"],
+      "@store": ["./@next/store"],
+      "@config": ["./@next/config"],
+      "@sockets": ["./@next/sockets"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
