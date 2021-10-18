@@ -92,3 +92,7 @@ Testing is one of the major parts of software development. [See this for knowing
 # Summary
 
 If I have to summarize all this I would say write tests like a user. Think that you don't know the inside logic of the component. Think like a user. Be like a user.
+
+### NOTE:
+
+The `@next/mocks` is different for `__mocks__` folder in the root directory. The former is used for mocking servers or other mocking related stuff required during testing. The latter is required for jest for manual module mocking [see](https://jestjs.io/docs/manual-mocks).
