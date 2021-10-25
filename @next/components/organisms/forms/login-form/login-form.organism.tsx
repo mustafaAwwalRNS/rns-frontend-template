@@ -4,7 +4,8 @@ import { LabelledTextField } from "@components/molecules";
 import { Grid, GridItem, Divider, Button, Typography } from "@components/atoms";
 import * as constants from "./login-form.constants";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useLogin, LoginCredentials } from "@queries";
+import { LoginCredentials } from "@queries";
+import { LoginFormProps } from "./login-form.types";
 
 /**
  * LoginForm
@@ -16,8 +17,11 @@ import { useLogin, LoginCredentials } from "@queries";
  * successful response.
  *
  */
-export const LoginForm = (): JSX.Element => {
-  const [login, { loading, status }] = useLogin();
+export const LoginForm = ({
+  onSubmit,
+  loading,
+  success,
+}: LoginFormProps): JSX.Element => {
   const {
     control,
     handleSubmit,
@@ -27,7 +31,7 @@ export const LoginForm = (): JSX.Element => {
     resolver: yupResolver(constants.loginCredentialValidationSchema),
   });
   return (
-    <form onSubmit={handleSubmit(login)} aria-label="Login Form">
+    <form onSubmit={handleSubmit(onSubmit)} aria-label="Login Form">
       <Grid flexDirection="column" alignItems="stretch" spacing={1}>
         <GridItem>
           <Typography variant="h1">Login</Typography>
@@ -75,7 +79,7 @@ export const LoginForm = (): JSX.Element => {
           />
         </GridItem>
         {errors.password && <GridItem>{errors.password.message}</GridItem>}
-        {status === "success" && <GridItem>success</GridItem>}
+        {success && <GridItem>success</GridItem>}
         <GridItem>
           <Divider noSpacing />
         </GridItem>

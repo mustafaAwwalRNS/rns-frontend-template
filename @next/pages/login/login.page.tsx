@@ -1,8 +1,6 @@
 import React from "react";
-import * as S from "./login.styles";
-import { Surface } from "@components/atoms";
-import { LoginForm } from "@components/organisms";
-import { GuestPanel } from "@components/templates";
+import { GuestPanel, LoginPage } from "@components/templates";
+import { useLogin } from "@queries";
 
 /**
  * Login
@@ -11,12 +9,16 @@ import { GuestPanel } from "@components/templates";
  * - Renders the login form with styling applied for better UX.
  */
 export const Login = (): JSX.Element => {
+  const [login, { status, loading, error }] = useLogin();
   return (
-    <S.LoginContainer>
-      <Surface spacing={4}>
-        <LoginForm />
-      </Surface>
-    </S.LoginContainer>
+    <LoginPage
+      loginFormProps={{
+        loading,
+        error,
+        success: status === "success",
+        onSubmit: login,
+      }}
+    />
   );
 };
 
